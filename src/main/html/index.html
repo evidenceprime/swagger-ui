@@ -37,38 +37,26 @@
       var hostname = window.location.hostname;
       var isLocalhost = hostname === 'localhost';
       var portAndBaseDir = isLocalhost ? ':8080/' : '/api/';
-      var url = 'http://' + hostname + portAndBaseDir + 'doc';
+      var apiUrl = window.location.protocol + '//' + hostname + portAndBaseDir;
+      var url = apiUrl + 'doc';
 
       hljs.configure({
         highlightSizeThreshold: 5000
       });
 
-      // Pre load translate...
-      if(window.SwaggerTranslator) {
-        window.SwaggerTranslator.translate();
-      }
-      window.swaggerUi = new SwaggerUi({
+      var ui = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
-          if(typeof initOAuth == "function") {
-            initOAuth({
-              clientId: "your-client-id",
-              clientSecret: "your-client-secret-if-required",
-              realm: "your-realms",
-              appName: "your-app-name",
-              scopeSeparator: ",",
-              additionalQueryStringParams: {}
-            });
-          }
-
-          if(window.SwaggerTranslator) {
-            window.SwaggerTranslator.translate();
-          }
+          log("SwaggerUI loaded");
+          swaggerApi.setHost(apiUrl);
+          window.swaggerApi = swaggerApi;
+          window.swaggerUi = swaggerUi;
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
+          log(data);
         },
         docExpansion: "none",
         jsonEditor: false,
@@ -76,7 +64,7 @@
         showRequestHeaders: false
       });
 
-      window.swaggerUi.load();
+      ui.load();
 
       function log() {
         if ('console' in window) {
