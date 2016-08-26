@@ -50,13 +50,12 @@
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
           log("SwaggerUI loaded");
-          swaggerApi.setHost(apiUrl);
           window.swaggerApi = swaggerApi;
           window.swaggerUi = swaggerUi;
         },
-        onFailure: function(data) {
+        onFailure: function(error) {
           log("Unable to Load SwaggerUI");
-          log(data);
+          log(error);
         },
         docExpansion: "none",
         jsonEditor: false,
