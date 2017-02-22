@@ -184,7 +184,7 @@
 .swagger-section .swagger-ui-wrap {
   font-family: "Droid Sans", sans-serif;
   min-width: 760px;
-  max-width: 1140px;
+  max-width: 1170px;
   box-sizing: border-box;
   color: #333333;
   display: block;
@@ -1410,20 +1410,12 @@
 }
 .swagger-section #header {
   min-width: 775px;
-  background-color: #222222;
-  background-image: -webkit-linear-gradient(top, #3c3c3c 0, #222 100%);
-  background-image: -o-linear-gradient(top, #3c3c3c 0, #222 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
-  background-image: linear-gradient(to bottom, #3c3c3c 0, #222 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-  background-repeat: repeat-x;
-  border-radius: 4px;
   display: block;
   box-sizing: border-box;
   position: relative;
-  min-height: 52px;
-  margin-bottom: 20px;
+  min-height: 50px;
+  padding: 15px 0px;
+  margin-bottom: 5px;
   vertical-align: middle;
 }
 .swagger-section #input_baseUrl {
@@ -1474,18 +1466,16 @@
   text-decoration: none;
   color: white;
 }
-.swagger-section #header a {
-  color: #9d9d9d !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-.swagger-section #header a:hover {
-  color: #fff !important;
+.swagger-section #header a,
+.swagger-section #header a:hover,
+.swagger-section #header a:active,
+.swagger-section #header a:visited {
+  color: #424242;
 }
 .swagger-section #header .logo__img {
   display: block;
   float: left;
   height: 44px;
-  margin-left: -15px;
   padding: 3px;
   vertical-align: middle;
   font-size: 18px;
@@ -1493,7 +1483,6 @@
 .swagger-section #header .logo__title {
   display: inline-block;
   padding: 15px;
-  margin-left: -15px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .swagger-section #header .header__img {
@@ -1530,7 +1519,7 @@
   background-color: #f2dede;
 }
 body {
-  padding: 10px;
+  padding: 0px;
 }
 #container {
   box-sizing: border-box;
