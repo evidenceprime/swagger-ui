@@ -38,7 +38,7 @@
       var isLocalhost = hostname === 'localhost';
       var portAndBaseDir = isLocalhost ? ':8080/' : '/api/';
       var apiUrl = window.location.protocol + '//' + hostname + portAndBaseDir;
-      var url = apiUrl + 'doc';
+      var url = apiUrl + 'doc/swagger.json';
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -80,10 +80,9 @@
     <div id='header'>
       <div class="swagger-ui-wrap">
         <a id ="logo" href="/">
-          <img class="logo__img" alt="swagger" src="images/dbep.png" />
-          <span class="logo__title">Database of Evidence Profiles - documentation</span>
+          <img class="logo__img" alt="swagger" src="images/gradepro-logo.svg" />
+          <span class="logo__title">Database of GRADE EtD's and Guidelines - documentation</span>
         </a>
-        <img class="header__last header__img" alt="DECIDE" src="images/decide.png" />
         <img class="header__img" alt="GRADE" src="images/grade.png" />
       </div>
     </div>
